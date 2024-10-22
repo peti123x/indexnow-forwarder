@@ -48,5 +48,6 @@ if ($hmac_header == $calculated_hmac) {
     http_response_code(200);
 } else {
     // HMAC is invalid, return a 401 response
+    error_log("Invalid HMAC - sent {$hmac_header} compared to {$calculated_hmac}");
     http_response_code(401);
 }
