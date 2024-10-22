@@ -6,8 +6,8 @@ header("Content-Type: application/json");
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
-$hmac_header = isset($_SERVER['X-Shopify-Hmac-Sha256']) ? $_SERVER['X-Shopify-Hmac-Sha256'] : null;
-$topic = isset($_SERVER['X-Shopify-Topic']) ? $_SERVER['X-Shopify-Topic'] : null;
+$hmac_header = $_SERVER['HTTP_X_SHOPIFY_HMAC_SHA256'] ?? null;
+$topic = $_SERVER['HTTP_X_SHOPIFY_TOPIC'] ?? null;
 $data = file_get_contents('php://input');
 $calculated_hmac = base64_encode(hash_hmac('sha256', $data, $_ENV['SHOPIFY_SIGNATURE'], true));
 
