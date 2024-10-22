@@ -1,9 +1,9 @@
 <?php
-require('vendor/autoload.php');
+require('../vendor/autoload.php');
 
 header("Content-Type: application/json");
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '../');
 $dotenv->load();
 
 $hmac_header = isset($_SERVER['X-Shopify-Hmac-Sha256']) ? $_SERVER['X-Shopify-Hmac-Sha256'] : null;
