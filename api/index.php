@@ -17,6 +17,18 @@ if ($hmac_header == $calculated_hmac) {
     switch($topic) {
         case "products/create":
             $url = $_ENV['DOMAIN'] . "products/" . $data['handle'];
+
+            $indexNow = new \Baraja\IndexNow\IndexNow(
+                apiKey: $_ENV['BING_KEY'],
+                searchEngine: 'bing'
+            );
+            $indexNow->sendChangedUrl($url);
+
+            $indexNow = new \Baraja\IndexNow\IndexNow(
+                apiKey: $_ENV['BING_KEY'],
+                searchEngine: 'yahoo'
+            );
+            $indexNow->sendChangedUrl($url);
             break;
         case "products/update":
             $url = $_ENV['DOMAIN'] . "products/" . $data['handle'];
@@ -36,9 +48,33 @@ if ($hmac_header == $calculated_hmac) {
             break;
         case "collections/create":
             $url = $_ENV['DOMAIN'] . "collections/" . $data['handle'];
+
+            $indexNow = new \Baraja\IndexNow\IndexNow(
+                apiKey: $_ENV['BING_KEY'],
+                searchEngine: 'bing'
+            );
+            $indexNow->sendChangedUrl($url);
+
+            $indexNow = new \Baraja\IndexNow\IndexNow(
+                apiKey: $_ENV['BING_KEY'],
+                searchEngine: 'yahoo'
+            );
+            $indexNow->sendChangedUrl($url);
             break;
         case "collections/update":
             $url = $_ENV['DOMAIN'] . "collections/" . $data['handle'];
+
+            $indexNow = new \Baraja\IndexNow\IndexNow(
+                apiKey: $_ENV['BING_KEY'],
+                searchEngine: 'bing'
+            );
+            $indexNow->sendChangedUrl($url);
+
+            $indexNow = new \Baraja\IndexNow\IndexNow(
+                apiKey: $_ENV['BING_KEY'],
+                searchEngine: 'yahoo'
+            );
+            $indexNow->sendChangedUrl($url);
             break;
         default:
             http_response_code(404);
