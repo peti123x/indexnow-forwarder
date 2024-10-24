@@ -2,3 +2,4 @@ vendor
 vendor/*
 .env
 .vercel
+.env*.local

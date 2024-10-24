@@ -11,5 +11,5 @@
     }
   ],
   "outputDirectory": "public",
-  "installCommand": "composer install && php database/migrate.php"
+  "installCommand": "composer install"
 }
