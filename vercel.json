@@ -10,5 +10,10 @@
       "dest": "/api/index.php"
     }
   ],
-  "outputDirectory": "public"
+  "outputDirectory": "public",
+  "env": {
+      "SHOPIFY_SIGNATURE": "@SHOPIFY_SIGNATURE",
+      "BING_KEY": "@BING_KEY",
+      "DOMAIN": "@DOMAIN"
+  }
 }
