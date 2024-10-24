@@ -26,7 +26,6 @@ if ($hmac_header == $calculated_hmac) {
         $url = $_ENV['DOMAIN'] . "products/" . $data['handle'];
 
         try {
-            sleep(15);
             error_log('Sending request for product');
             $body = $client->request(
                 'GET',
@@ -51,7 +50,6 @@ if ($hmac_header == $calculated_hmac) {
         $url = $_ENV['DOMAIN'] . "collections/" . $data['handle'];
 
         try {
-            sleep(15);
             error_log('Sending request for collection');
             $body = $client->request(
                 'GET',
