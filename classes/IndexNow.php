@@ -16,18 +16,20 @@ final class IndexNow
     {
         error_log('Sending request');
         try {
-            $this->client->request(
+            $body = $this->client->request(
                 'GET',
                 str_replace(
                     ['{url}', '{key}'],
                     [urlencode($url), $this->key],
                     self::ENDPOINT
                 )
-            );
+            )->getBody();
             error_log("Submitted {$url}");
+            error_log($body->getContents());
         } catch (\GuzzleHttp\Exception\GuzzleException $e) {
             error_log("FAILED TO REGISTER {$url}");
             error_log($e->getMessage());
+            throw $e;
         }
 
     }
