@@ -22,6 +22,7 @@ final class IndexNow
                     self::ENDPOINT
                 )
             );
+            error_log("Submitted {$url}");
         } catch (\GuzzleHttp\Exception\GuzzleException $e) {
             error_log("FAILED TO REGISTER {$url}");
             error_log($e->getMessage());
