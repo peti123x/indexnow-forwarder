@@ -43,7 +43,6 @@ if ($hmac_header == $calculated_hmac) {
             break;
         default:
             http_response_code(404);
-
     }
 
     http_response_code(200);
