@@ -14,6 +14,7 @@ $data = file_get_contents('php://input');
 $calculated_hmac = base64_encode(hash_hmac('sha256', $data, $_ENV['SHOPIFY_SIGNATURE'], true));
 
 $endpoint = "https://api.indexnow.org/indexnow?url={url}&key={key}";
+$data = json_decode($data, true);
 
 if ($hmac_header == $calculated_hmac) {
     // HMAC is valid, process the request
@@ -43,13 +44,14 @@ if ($hmac_header == $calculated_hmac) {
         }
 
         http_response_code(200);
+        die();
     }
     if(str_contains($topic, "collections")) {
         $url = $_ENV['DOMAIN'] . "collections/" . $data['handle'];
 
         try {
             error_log('Sending request for collection');
-            $client->request(
+            $body = $client->request(
                 'GET',
                 str_replace(
                     ['{url}', '{key}'],
@@ -57,6 +59,7 @@ if ($hmac_header == $calculated_hmac) {
                     $endpoint
                 )
             )->getBody();
+            error_log($body->getContents());
         }  catch (\GuzzleHttp\Exception\GuzzleException $e) {
             error_log("FAILED TO REGISTER {$url}");
             error_log($e->getMessage());
@@ -65,6 +68,7 @@ if ($hmac_header == $calculated_hmac) {
         }
 
         http_response_code(200);
+        die();
     }
 
     http_response_code(404);
