@@ -31,7 +31,6 @@ if(str_contains($topic, "products")) {
     $url = $_ENV['DOMAIN'] . "products/" . $data['handle'];
 
     try {
-        sleep(5);
         $indexNow
             ->sendChangedUrl($url);
         http_response_code(200);
@@ -45,7 +44,6 @@ if(str_contains($topic, "collections")) {
     $url = $_ENV['DOMAIN'] . "collections/" . $data['handle'];
 
     try {
-        sleep(5);
         $indexNow
             ->sendChangedUrl($url);
         http_response_code(200);
