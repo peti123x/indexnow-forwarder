@@ -19,62 +19,26 @@ if ($hmac_header == $calculated_hmac) {
         case "products/create":
             $url = $_ENV['DOMAIN'] . "products/" . $data['handle'];
 
-            $indexNow = new \Baraja\IndexNow\IndexNow(
-                apiKey: $_ENV['BING_KEY'],
-                searchEngine: 'bing'
-            );
-            $indexNow->sendChangedUrl($url);
-
-            $indexNow = new \Baraja\IndexNow\IndexNow(
-                apiKey: $_ENV['BING_KEY'],
-                searchEngine: 'yahoo'
-            );
+            $indexNow = new IndexNow($_ENV['BING_KEY']);
             $indexNow->sendChangedUrl($url);
             break;
         case "products/update":
             $url = $_ENV['DOMAIN'] . "products/" . $data['handle'];
 
-            $indexNow = new \Baraja\IndexNow\IndexNow(
-                apiKey: $_ENV['BING_KEY'],
-                searchEngine: 'bing'
-            );
-            $indexNow->sendChangedUrl($url);
-
-            $indexNow = new \Baraja\IndexNow\IndexNow(
-                apiKey: $_ENV['BING_KEY'],
-                searchEngine: 'yahoo'
-            );
+            $indexNow = new IndexNow($_ENV['BING_KEY']);
             $indexNow->sendChangedUrl($url);
 
             break;
         case "collections/create":
             $url = $_ENV['DOMAIN'] . "collections/" . $data['handle'];
 
-            $indexNow = new \Baraja\IndexNow\IndexNow(
-                apiKey: $_ENV['BING_KEY'],
-                searchEngine: 'bing'
-            );
-            $indexNow->sendChangedUrl($url);
-
-            $indexNow = new \Baraja\IndexNow\IndexNow(
-                apiKey: $_ENV['BING_KEY'],
-                searchEngine: 'yahoo'
-            );
+            $indexNow = new IndexNow($_ENV['BING_KEY']);
             $indexNow->sendChangedUrl($url);
             break;
         case "collections/update":
             $url = $_ENV['DOMAIN'] . "collections/" . $data['handle'];
 
-            $indexNow = new \Baraja\IndexNow\IndexNow(
-                apiKey: $_ENV['BING_KEY'],
-                searchEngine: 'bing'
-            );
-            $indexNow->sendChangedUrl($url);
-
-            $indexNow = new \Baraja\IndexNow\IndexNow(
-                apiKey: $_ENV['BING_KEY'],
-                searchEngine: 'yahoo'
-            );
+            $indexNow = new IndexNow($_ENV['BING_KEY']);
             $indexNow->sendChangedUrl($url);
             break;
         default:
