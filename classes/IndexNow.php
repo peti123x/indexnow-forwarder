@@ -8,11 +8,13 @@ final class IndexNow
 
     public function __construct(private readonly string $key)
     {
+        error_log('Creating client');
         $this->client = new Client();
     }
 
     public function sendChangedUrl(string $url): void
     {
+        error_log('Sending request');
         try {
             $this->client->request(
                 'GET',
