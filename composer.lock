@@ -4,55 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c82312e16f52412adb557cb3c478b035",
+    "content-hash": "70e44add9a2d3def39c5e814183674d3",
     "packages": [
-        {
-            "name": "baraja-core/index-now",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/baraja-core/index-now.git",
-                "reference": "934bd0e087ad9fab821dae255b343de1dc77c531"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/baraja-core/index-now/zipball/934bd0e087ad9fab821dae255b343de1dc77c531",
-                "reference": "934bd0e087ad9fab821dae255b343de1dc77c531",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan": "^1.0",
-                "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-nette": "^1.0",
-                "phpstan/phpstan-strict-rules": "^1.0",
-                "roave/security-advisories": "dev-master",
-                "spaze/phpstan-disallowed-calls": "^2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Jan Barášek",
-                    "homepage": "https://baraja.cz"
-                }
-            ],
-            "description": "Send ping to search engine by Index now protocol.",
-            "homepage": "https://github.com/baraja-core/index-now",
-            "support": {
-                "issues": "https://github.com/baraja-core/index-now/issues",
-                "source": "https://github.com/baraja-core/index-now/tree/v1.0.0"
-            },
-            "time": "2021-11-08T15:11:20+00:00"
-        },
         {
             "name": "graham-campbell/result-type",
             "version": "v1.1.3",
