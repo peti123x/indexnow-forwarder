@@ -14,6 +14,7 @@ $calculated_hmac = base64_encode(hash_hmac('sha256', $data, $_ENV['SHOPIFY_SIGNA
 if ($hmac_header == $calculated_hmac) {
     // HMAC is valid, process the request
     // ...
+    error_log($topic);
     switch($topic) {
         case "products/create":
             $url = $_ENV['DOMAIN'] . "products/" . $data['handle'];
