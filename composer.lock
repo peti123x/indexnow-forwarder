@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c37619760f22c9605d946ccceabeeeae",
+    "content-hash": "c82312e16f52412adb557cb3c478b035",
     "packages": [
         {
             "name": "baraja-core/index-now",
